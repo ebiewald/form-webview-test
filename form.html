@@ -5,8 +5,112 @@
     <meta name="viewport" content="width=device-width">
     <title>Patient Health Questionnaire Form Test</title>
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: #fcfbf5;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 100%;
+        }
+
+        body {
+            color: #4a4a4a;
+            margin: 0 auto;
+            max-width: 768px;
+        }
+
+        h1 {
+            color: #4aa699;
+            font-size: 1em;
+            font-weight: 500;
+            padding: 15px 10px 5px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: .625em;
+            padding: 10px;
+            text-align: center;
+        }
+
         fieldset {
+            background: #fff;
+            border: none;
+            border-bottom: 1px solid #e6e6e6;
+            border-top: 1px solid #e6e6e6;
+            font-size: 1rem;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        h2 {
+            color: #4aa699;
+            border-bottom: 1px solid #e6e6e6;
+            font-size: .875em;
+            font-weight: 400;
+            margin: 5px 5px 25px;
+            padding: 10px 0;
+        }
+
+        label {
+            font-size: .625em;
+        }
+
+        fieldset div {
+            float: left;
             margin-bottom: 20px;
+            padding: 5px;
+            position: relative;
+            width: 25%;
+        }
+
+        input[type=radio] {
+            clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            top: auto;
+            white-space: nowrap; /* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
+            width: 1px;
+        }
+
+        input[type=radio] + label {
+            display: block;
+            padding-left: 2.6em;
+        }
+
+        fieldset > div input[type=radio] + label {
+            margin: -1em 0;
+        }
+
+        input[type=radio] + label:before {
+            background: #fff;
+            background-color: rgba(255, 255, 255, .8);
+            border: 1px solid #4a4a4a;
+            border-radius: 100%;
+            box-sizing: border-box;
+            content: '';
+            cursor: pointer;
+            display: block;
+            float: left;
+            height: 1.8em;
+            margin-left: -2.5em;
+            text-align: center;
+            transition: all .1s ease-out;
+            vertical-align: top;
+            width: 1.8em;
+        }
+
+        input[type=radio]:checked + label:before {
+            background-color: #4aa699;
+            border: 1px solid #4aa699;
+            box-shadow: inset 0 0 0 .14em rgba(255, 255, 255, .95);
         }
     </style>
 </head>
@@ -15,101 +119,149 @@
     <p>Over the last 2 weeks, how often have you been bothered by any of the following problems?</p>
     <form>
         <fieldset>
-            <legend>Little interest or pleasure in doing things</legend>
+            <h2>Little interest or pleasure in doing things</h2>
 
-            <input type="radio" name="question1" id="radio" required>
-            <label for="radio">Not at all</label>
+            <div>
+                <input type="radio" name="question1" id="radio" required>
+                <label for="radio">Not at all</label>
+            </div>
 
-            <input type="radio" name="question1" id="radio1">
-            <label for="radio1">Several days</label>
+            <div>
+                <input type="radio" name="question1" id="radio1">
+                <label for="radio1">Several days</label>
+            </div>
 
-            <input type="radio" name="question1" id="radio2">
-            <label for="radio2">More than half the days</label>
+            <div>
+                <input type="radio" name="question1" id="radio2">
+                <label for="radio2">More than half the days</label>
+            </div>
 
-            <input type="radio" name="question1" id="radio3">
-            <label for="radio3">Nearly every day</label>
+            <div>
+                <input type="radio" name="question1" id="radio3">
+                <label for="radio3">Nearly every day</label>
+            </div>
         </fieldset>
 
         <fieldset>
-            <legend>Feeling down, depressed, or hopeless</legend>
+            <h2>Feeling down, depressed, or hopeless</h2>
 
-            <input type="radio" name="question2" id="radio4" required>
-            <label for="radio4">Not at all</label>
+            <div>
+                <input type="radio" name="question2" id="radio4" required>
+                <label for="radio4">Not at all</label>
+            </div>
 
-            <input type="radio" name="question2" id="radio5">
-            <label for="radio5">Several days</label>
+            <div>
+                <input type="radio" name="question2" id="radio5">
+                <label for="radio5">Several days</label>
+            </div>
 
-            <input type="radio" name="question2" id="radio6">
-            <label for="radio6">More than half the days</label>
+            <div>
+                <input type="radio" name="question2" id="radio6">
+                <label for="radio6">More than half the days</label>
+            </div>
 
-            <input type="radio" name="question2" id="radio7">
-            <label for="radio7">Nearly every day</label>
+            <div>
+                <input type="radio" name="question2" id="radio7">
+                <label for="radio7">Nearly every day</label>
+            </div>
         </fieldset>
 
         <fieldset>
-            <legend>Trouble falling or staying asleep, or sleeping too much</legend>
+            <h2>Trouble falling or staying asleep, or sleeping too much</h2>
 
-            <input type="radio" name="question3" id="radio8" required>
-            <label for="radio8">Not at all</label>
+            <div>
+                <input type="radio" name="question3" id="radio8" required>
+                <label for="radio8">Not at all</label>
+            </div>
 
-            <input type="radio" name="question3" id="radio9">
-            <label for="radio9">Several days</label>
+            <div>
+                <input type="radio" name="question3" id="radio9">
+                <label for="radio9">Several days</label>
+            </div>
 
-            <input type="radio" name="question3" id="radio10">
-            <label for="radio10">More than half the days</label>
+            <div>
+                <input type="radio" name="question3" id="radio10">
+                <label for="radio10">More than half the days</label>
+            </div>
 
-            <input type="radio" name="question3" id="radio11">
-            <label for="radio11">Nearly every day</label>
+            <div>
+                <input type="radio" name="question3" id="radio11">
+                <label for="radio11">Nearly every day</label>
+            </div>
         </fieldset>
 
-        <!--<fieldset>-->
-            <!--<legend>Feeling tired or having little energy</legend>-->
+        <fieldset>
+            <h2>Feeling tired or having little energy</h2>
 
-            <!--<input type="radio" name="question4" id="radio12" required>-->
-            <!--<label for="radio12">Not at all</label>-->
+            <div>
+                <input type="radio" name="question4" id="radio12" required>
+                <label for="radio12">Not at all</label>
+            </div>
 
-            <!--<input type="radio" name="question4" id="radio13">-->
-            <!--<label for="radio13">Several days</label>-->
+            <div>
+                <input type="radio" name="question4" id="radio13">
+                <label for="radio13">Several days</label>
+            </div>
 
-            <!--<input type="radio" name="question4" id="radio14">-->
-            <!--<label for="radio14">More than half the days</label>-->
+            <div>
+                <input type="radio" name="question4" id="radio14">
+                <label for="radio14">More than half the days</label>
+            </div>
 
-            <!--<input type="radio" name="question4" id="radio15">-->
-            <!--<label for="radio15">Nearly every day</label>-->
-        <!--</fieldset>-->
+            <div>
+                <input type="radio" name="question4" id="radio15">
+                <label for="radio15">Nearly every day</label>
+            </div>
+        </fieldset>
 
-        <!--<fieldset>-->
-            <!--<legend>Poor apetite or overeating</legend>-->
+        <fieldset>
+            <h2>Poor apetite or overeating</h2>
 
-            <!--<input type="radio" name="question5" id="radio16" required>-->
-            <!--<label for="radio16">Not at all</label>-->
+            <div>
+                <input type="radio" name="question5" id="radio16" required>
+                <label for="radio16">Not at all</label>
+            </div>
 
-            <!--<input type="radio" name="question5" id="radio17">-->
-            <!--<label for="radio17">Several days</label>-->
+            <div>
+                <input type="radio" name="question5" id="radio17">
+                <label for="radio17">Several days</label>
+            </div>
 
-            <!--<input type="radio" name="question5" id="radio18">-->
-            <!--<label for="radio18">More than half the days</label>-->
+            <div>
+                <input type="radio" name="question5" id="radio18">
+                <label for="radio18">More than half the days</label>
+            </div>
 
-            <!--<input type="radio" name="question5" id="radio19">-->
-            <!--<label for="radio19">Nearly every day</label>-->
-        <!--</fieldset>-->
+            <div>
+                <input type="radio" name="question5" id="radio19">
+                <label for="radio19">Nearly every day</label>
+            </div>
+        </fieldset>
 
 
-        <!--<fieldset>-->
-            <!--<legend>Feeling bad about yourself-or that you are a failure or have let yourself or your family down</legend>-->
+        <fieldset>
+            <h2>Feeling bad about yourself-or that you are a failure or have let yourself or your family down</h2>
 
-            <!--<input type="radio" name="question6" id="radio20" required>-->
-            <!--<label for="radio20">Not at all</label>-->
+            <div>
+                <input type="radio" name="question6" id="radio20" required>
+                <label for="radio20">Not at all</label>
+            </div>
 
-            <!--<input type="radio" name="question6" id="radio21">-->
-            <!--<label for="radio21">Several days</label>-->
+            <div>
+                <input type="radio" name="question6" id="radio21">
+                <label for="radio21">Several days</label>
+            </div>
 
-            <!--<input type="radio" name="question6" id="radio22">-->
-            <!--<label for="radio22">More than half the days</label>-->
+            <div>
+                <input type="radio" name="question6" id="radio22">
+                <label for="radio22">More than half the days</label>
+            </div>
 
-            <!--<input type="radio" name="question6" id="radio23">-->
-            <!--<label for="radio23">Nearly every day</label>-->
-        <!--</fieldset>-->
+            <div>
+                <input type="radio" name="question6" id="radio23">
+                <label for="radio23">Nearly every day</label>
+            </div>
+        </fieldset>
 
         <button type="View results">View results</button>
     </form>
